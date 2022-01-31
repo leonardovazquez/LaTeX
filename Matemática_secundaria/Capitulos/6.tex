@@ -1,0 +1,166 @@
+Simplificar implica lograr que una expresión matemática esté compuesta por un único término lo más sencillo posible. Veamos un ejemplo:
+
+\begin{equation}
+    \notag
+    \frac{0.\wideparen{2}+1,1\wideparen{1}}{0,\wideparen{6}} -1 =?
+\end{equation}
+
+Desde el capitulo anterior, sabemos que a los números decimales podemos expresarlos como números fraccionarios:
+
+\begin{equation}
+    \notag
+    \frac{\frac{2}{9}+\frac{100}{90}}{\frac{6}{9}}-1 =?
+\end{equation}
+
+Lo próximo a realizar es una suma de fracciones con distinto denominador: 
+
+\begin{equation}
+    \notag
+    \frac{\frac{4}{3}}{\frac{6}{9}}-1 = ?
+\end{equation}
+
+División de fracciones y luego una simple resta:
+
+\begin{equation}
+    \notag
+    2-1 = 1
+\end{equation}
+
+A pesar de que el proceso sea largo, lo importante aquí a resaltar es la aplicación de los conceptos y propiedades vistas anteriormente.
+
+Por otro lado, racionalizar implica modificar una expresión fraccionaria con raíz en el denominador a una expresión fraccionaria sin raíz en el denominador. El truco es bastante sencillo: Hay que observar el índice de la raíz y la potencia del radicando:
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt[n]{a^b}}
+\end{equation}
+
+Luego se multiplica por un entero cuyas raíces en numerador y denominador son iguales y posee igual índice pero distinta potencia al que se desea extraer o racionalizar:
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt[n]{a^b}}\cdot \frac{\sqrt[n]{a^{n-b}}}{\sqrt[n]{a^{n-b}}}
+\end{equation}
+
+Haciendo uso de alguna de las propiedades de la potencia y raíz:
+
+
+\begin{equation}
+    \notag
+   \sqrt[n]{a^{n-b}} = a^{(n-b)/n}
+\end{equation}
+
+\begin{equation}
+    \notag
+   \sqrt[n]{a^b} = a^{b/n}
+\end{equation}
+
+De esta forma: 
+
+\begin{equation}
+    \notag
+    \frac{1\cdot \sqrt[n]{a^{n-b}} }{a^{b/n} \cdot  a^{(n-b)/n}} 
+\end{equation}
+
+Pero exponentes de potencias con igual base se suman por lo que:
+
+\begin{equation}
+    \notag
+   a^{b/n} \cdot  a^{(n-b)/n}= a 
+\end{equation}
+
+Por lo que la formula para racionalizar es simplemente: 
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt[n]{a^b}} = \frac{\sqrt[n]{a^{n-b}}}{a}
+\end{equation}
+
+Veamos un ejemplo sencillo:
+
+
+\begin{equation}
+    \notag
+    \frac{4}{\sqrt[5]{7^3}} 
+\end{equation}
+
+En este caso solo basta con mirar nuestra formula y darse cuenta que: $n=5$, $a=7$ y $b=3$ por lo que $n-b=2$. De esta forma:
+
+\begin{equation}
+    \notag
+    \frac{4}{\sqrt[5]{7^3}} = \frac{4\cdot \sqrt[5]{7^{2}}}{7}
+\end{equation}
+
+En muchos casos, puede que te encuentres con expresiones del tipo:
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt{a}+\sqrt{b}}
+\end{equation}
+
+La manera de racionalizar esto es multiplicando por un entero que posea en el numerador y denominador el conjugado del denominador de la expresión anterior, es decir, cambiar el signo:
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt{a}+\sqrt{b}}\cdot \frac{\sqrt{a}-\sqrt{b}}{\sqrt{a}-\sqrt{b}}
+\end{equation}
+
+Realizando la multiplicación entre denominadores se obtiene fácilmente:
+
+\begin{equation}
+    \notag
+     \frac{1}{\sqrt{a}+\sqrt{b}}= \frac{\sqrt{a}-\sqrt{b}}{a-b}
+\end{equation}
+$Observación$: En caso de que en el denominador no sean ambos términos con raíz necesariamente, el procedimiento consiste en multiplicar por un entero conjugado.\\
+\medskip
+Veamos un ejemplo sencillo: 
+
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt{2}+\sqrt{3}} 
+\end{equation}
+Multiplicamos por el entero conjugado:
+
+\begin{equation}
+    \notag
+    =\frac{1}{(\sqrt{2}+\sqrt{3})} \cdot \frac{\sqrt{2}-\sqrt{3}}{(\sqrt{2}-\sqrt{3})}
+\end{equation}
+
+\begin{equation}
+    \notag
+=\frac{\sqrt{2}-\sqrt{3}}{(\sqrt{2}\cdot \sqrt{2})-(\sqrt{3}\cdot \sqrt{2})+(\sqrt{3}\cdot \sqrt{2})-(\sqrt{3}\cdot \sqrt{3})}
+\end{equation}
+
+Finalmente:
+\begin{equation}
+    \notag
+    \frac{1}{\sqrt{2}+\sqrt{3}} = \frac{\sqrt{2}-\sqrt{3}}{2-3} =  \frac{\sqrt{2}-\sqrt{3}}{-1} 
+\end{equation}
+
+Ejercicios: Simplificar
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{{\theenumi})}
+\item $7\cdot \sqrt[3]{9}- \frac{1}{3}\cdot  \sqrt[3]{9}$
+\item $\frac{3}{5}\cdot \sqrt{7}-\frac{3}{4}$
+\item $3\cdot \sqrt[3]{64}-\sqrt[3]{27}$
+\item $\sqrt{80}\cdot \sqrt{30}$
+\end{enumerate}
+
+Ejercicios: Resolver
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{{\theenumi})}
+\item $(0,1)^{-1}+\frac{1}{2}:\frac{-3}{2}-\sqrt{1/4}$
+\item $0,3\cdot \frac{-1}{2}-(2/5)^{-2}$
+\item $(\frac{3}{2}-\frac{5}{3})^{-1}+\sqrt{0,\wideparen{1}}$
+\end{enumerate}
+
+Ejercicios: Racionalizar
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{{\theenumi})}
+\item ${13}:(20-\sqrt{15})$
+\item $-17:\sqrt{15}$
+\item $8:\sqrt[10]{2^4}$
+\end{enumerate}

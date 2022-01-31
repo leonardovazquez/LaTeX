@@ -1,0 +1,73 @@
+\documentclass[12pt,letterpaper]{article}  
+%-------INSTALACIÓN DE PAQUETES-------
+\input{config}
+%----------Encabezado---------
+\lhead{Matemática}
+	\chead{}
+	\rhead{}
+	%\lfoot{Facultad de Ingeniería}
+	\cfoot{\thepage\ de \pageref{LastPage}}
+	%\rfoot{Universidad Nacional de Mar del Plata}
+
+% Comandos especiales
+\newcommand{\EIE}{\textsc{Facultad \Lightning~ Ingeniería}}
+%---------------INICIO DE DOCUMENTO--------------
+\begin{document}
+% portada
+\begin{titlepage}
+                \input{portada}
+\end{titlepage}
+%\maketitle
+%\thispagestyle{empty} 
+%\maketitle
+% índice
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+\bigskip
+
+%-----------INICIO------------
+\newpage
+\section{Números naturales}
+\input{Capitulos/1}
+%-------------------------------
+\newpage
+\section{Ecuaciones - Parte I}
+\input{Capitulos/2}
+%-------------------------------
+%\newpage
+\section{Potencia y Raíz}
+\input{Capitulos/3}
+%-------------------------------
+%\newpage
+\section{Fracciones}
+\input{Capitulos/4}
+%-------------------------------
+%\newpage
+\section{Números decimales}
+\input{Capitulos/5}
+%-------------------------------
+%\newpage
+\section{Simplificación y Racionalización}
+\input{Capitulos/6}
+%-------------------------------
+%\newpage
+\section{Ecuaciones - Parte II}
+\input{Capitulos/7}
+%-------------------------------
+%\newpage
+\section{Sistemas de ecuaciones}
+\input{Capitulos/8}
+%-------------------------------
+%-------------------------------
+\newpage
+\section*{Examen Integrador}
+\input{Capitulos/examen}
+%-------------------------------
+
+      
+
+\bigskip
+
+\end{document}
