@@ -1,0 +1,71 @@
+En los sistemas electrónicos surge con frecuencia la necesidad de contar con señales periódicas como por ejemplo señales senoidales. En particular, el método que se utiliza es el del concepto de realimentación y consiste en un amplificador y una red selectiva en frecuencia R-C o L-C. 
+
+En este punto se estudian los principios básicos de los osciladores lineales, el cual se tiene que emplear alguna forma de no linealidad para obtener el control de la amplitud de la onda de salida. De hecho todos los osciladores son, estrictamente hablando, circuitos no lineales.
+Para poder utilizar las herramientas de análisis y diseño de sistemas lineales se procede en dos pasos: primero se considera al sistema idealmente lineal, utilizando los criterios circuitales y de realimentación conocidos; y luego se hace uso de mecanismos no lineal para controlar la amplitud. 
+
+En la figura \ref{1.0} se muestra un sistema realimentado. Considerando el límite de estabilidad: $1 + T(s) = 1 + a(s)f(s) = 0$.
+
+%%paquete de tikz
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{line} = [thick,-,>=stealth]
+
+
+\tikzstyle{beta} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!50] 
+\tikzstyle{amp} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!50]
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+    \centering
+     \begin{tikzpicture}[node distance=2cm]
+                       \node (amp) [amp] {$a(s)$};
+                       \node (beta) [beta, below of=amp] {$\beta (s)$};
+                       \draw [arrow] (-3,0) -- (amp);
+                       \draw [arrow]  (amp) -- (3,0);
+                       \draw [arrow] (beta) -- (-3,-2);
+                       \draw [arrow] (3,-2) -- (beta);
+                       \draw [thick] (3,-2) -- (3,0) ;
+                       \draw [thick] (-3,0) -- (-3,-2);
+    \end{tikzpicture}
+\caption{Esquema de un oscilador senoidal.$a(s)$: amplificador. $\beta (s)$ = red selectiva de frecuencia.}
+\label{1.0}
+\end{figure}
+
+
+
+
+\subsubsection{Criterio de oscilación}
+
+Si a una frecuencia angular específica $w_o$ la ganancia de lazo $\mid a(w_o)\cdot \beta(w_o)\mid =1$, el sistema sería un oscilador, es decir, tendría una salida finita sin excitación en su entrada. Para que el sistema oscile senoidalmente a la frecuencia $w_o$ la condición antedicha sólo debe cumplirse a una tal frecuencia. Esto se conoce como criterio de oscilación de Barkhausen.
+
+El criterio de Barkhausen puede desdoblarse en:
+
+\begin{equation}
+\label{eq:1_1}
+\mid a(w_o)\cdot \beta (w_o)\mid =1  
+\end{equation}
+
+\begin{equation}
+\label{eq:1_2}
+\Phi \{a(w_o)\cdot \beta (w_o)\} = 0  
+\end{equation}
+
+La expresión \ref{eq:1_1} es la denominada condición de amplitud. En la práctica, la red $\beta$ es una red selectiva en frecuencia, siendo $w_o$ su frecuencia central de mínima atenuación. A dicha frecuencia la amplificación $a(w_o)$ sería igual a la inversa de la atenuación de la red selectiva en frecuencia $\beta (w_o)$, de modo que la ganancia de lazo total sea unitaria. En cambio, la expresión $\ref{eq:1_2}$ es la condición de fase, que establece que el desfasaje de la ganancia de lazo debe ser nulo a la frecuencia $w_o$.
+
+\subsubsection{Control no lineal de amplitud}
+
+El criterio de oscilación de Barkhausen garantiza oscilaciones senoidales en un sentido matemático. Si por medio de ajustes se lograra que el sistema cumpla exactamente la condición de amplitud, es sabido que esta situación sería imposible de mantenerla en el tiempo, ya que variaciones inevitables de los parámetros (por ejemplo por temperatura) harían que los polos imaginarios puros se desplazaran a uno u otro lado en el plano $S$. Si los polos se desplazaran hacia la izquierda del eje imaginario (zona estable) las oscilaciones cesarían. Por el contrario, si los polos se movieran hacia el semiplano derecho, la amplitud de las oscilaciones tendería a aumentar siendo limitadas por la saturación de los dispositivos activos, generando señales oscilantes con alto grado de distorsión. Es sabido, además, que la amplitud de la señal de salida de un sistema con polos en el eje imaginario depende en forma teórica de las condiciones iniciales. Estos dos efectos, la variación de los parámetros y la dependencia de la amplitud de salida de las condiciones iniciales, hacen necesario un mecanismo de control no lineal de la ganancia del sistema.
+
+Básicamente el mecanismo de control debe cumplir con lo siguiente: 
+\begin{itemize}
+    \item En primera instancia se debe diseñar el sistema para que los polos se encuentren en la mitad derecha del plano $S$, con la precaución de que estén cercanos al eje imaginario $j$. Esta condición se obtiene modificando el criterio de Barkhausen de modo que se cumpla la condición de fase y que se cumpla en exceso la condición de amplitud:  $\mid a(w_o)\cdot \beta(w_o)\mid > 1$, de
+    esta manera aseguramos que los polos iniciales estén en el semiplano derecho. Para que no haya excesiva distorsión no lineal en la señal de salida, la condición de amplitud debe diseñarse
+    para que se cumpla en exceso pero en menos de un $10 \%$, como criterio práctico.
+    \item En el caso del item anterior, si se conecta la fuente de alimentación, la amplitud de las oscilaciones tiende a incrementarse. Cuando la amplitud llega a un nivel deseado, la red no lineal entra en acción y hace que la ganancia de lazo se reduzca exactamente a la unidad. En otras palabras, los polos serían 'movidos' al eje $j w$. Esto haría que el circuito sostenga oscilaciones a la amplitud deseada. Si por algún motivo la ganancia de lazo se redujera por debajo de la unidad, la amplitud tendería a disminuir, esto sería detectado por la red no lineal, que haría que la ganancia de lazo aumente lo necesario para llegar nuevamente a la unidad.
+
+\end{itemize}
+
+
+

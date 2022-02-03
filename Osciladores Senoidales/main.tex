@@ -1,0 +1,59 @@
+\documentclass[12pt,letterpaper]{article}  
+%%%%%%%%INSTALACION DE PAQUETES%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{config}
+
+\lhead{Circuitos electrónicos 1}
+	\chead{}
+	\rhead{Osciladores senoidales}
+	%\lfoot{Facultad de Ingeniería}
+	\cfoot{\thepage\ de \pageref{LastPage}}
+	%\rfoot{Universidad Nacional de Mar del Plata}
+
+% Comandos especiales
+\newcommand{\EIE}{\textsc{Facultad \Lightning~ Ingeniería}}
+%---------------INICIO DE DOCUMENTO--------------
+\begin{document}
+
+% portada
+\begin{titlepage}
+                \input{portada}
+\end{titlepage}
+
+%\maketitle
+%\thispagestyle{empty} 
+%\maketitle
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+% RESUMEN
+\section*{Resumen}
+
+\setlength{\parindent}{12pt}
+\input{resumen}
+\bigskip
+
+%OSCILADORES SENOIDALES
+\newpage
+\section{Osciladores senoidales}
+   \subsection{Fundamentos teóricos}
+      \input{fundamentos}
+      \newpage
+   \subsection{Oscilador RC}
+      \input{RC}
+      \newpage
+\subsection{Oscilador tipo Colpitts}
+      \input{colpitts}
+      \newpage
+\subsection{Oscilador con cristal}
+      \input{cristal}
+      %\cite{fis}
+
+\bigskip
+           \newpage
+                   \printbibliography 
+\bigskip
+
+\end{document}
