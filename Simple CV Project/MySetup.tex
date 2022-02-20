@@ -1,0 +1,77 @@
+% !TEX root = Simple-CV.tex
+%-------------------------------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{fontawesome}
+\usepackage{datetime}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=ColorTwo]{hyperref}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{adjustbox}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{listings}
+\usepackage{parskip}
+%-------------------------------------------------------------------------------------------------------
+% Layout
+%-------------------------------------------------------------------------------------------------------
+\pagenumbering{gobble}
+\renewcommand{\baselinestretch}{1.5} 
+\setlength{\parindent}{0pt}
+
+%
+% Color theme
+%
+\definecolor{ColorOne}{RGB}{100,100,100} 	% Gris
+\definecolor{ColorTwo}{RGB}{120,0,120} 	% Mauve
+\definecolor{ColorRed}{RGB}{0,100,162} 	% Red
+
+\sectionfont{\color{ColorRed}} 
+\subsectionfont{\color{ColorRed}} 
+
+%
+% Vertical line
+%
+\newcommand{\MyVerticalRule}{%
+	\textcolor{ColorRed}{\rule{1pt}{\textheight}}
+}
+
+%
+% Update
+%
+\newcommand{\LastUpdate}{%
+\vfill
+\centering \small
+\textcolor{ColorRed}{Last updated: \monthname,~\the\year.}
+}
+
+%
+% Skip
+%
+\newcommand{\MySkip}{
+\vskip12pt
+}
+
+%
+% Format hyperrefs
+%
+\newcommand{\myhref}[2]{%
+\href{#1}{\textcolor{ColorRed}{#2}}
+}
+%
+% Format skill bullets
+%
+\newcommand{\SkillBull}[1]{%
+\textcolor{ColorRed}{#1}
+}
+
+%% Justify
+\usepackage{ragged2e}
